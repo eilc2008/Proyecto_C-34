@@ -4,7 +4,7 @@ const Bodies = Matter.Bodies;
 const Constraint = Matter.Constraint;
 
 var engine, world;
-var box1, box2, box3,box4;
+var box1, box2, box3,box4,box5,box6,box7,box8,box9,box10,box11,box12,box13,box14,box15;
 var hero,monster,rope,ground;
 
 function preload() {
@@ -22,11 +22,24 @@ function setup() {
   rope = new Rope(hero.body, { x: 500, y: 50 });
   monster = new Monster(1100,550,300);
 
-  box1 = new Box(600, 100, 70, 70);
-  box2 = new Box(900, 100, 70, 70);
-  box3 = new Box(900, 100, 70, 70);
-  box4 = new Box(900, 100, 70, 70);
+  box1 = new Box(600, 562.5, 75, 75);
+  box2 = new Box(750, 562.5, 75, 75);
+  box3 = new Box(900, 562.5, 75, 75);
 
+  box4 = new Box(600, 487.5, 75, 75);
+  box5 = new Box(600, 412.5, 75, 75);
+  box6 = new Box(600, 337.5, 75, 75);
+  box7 = new Box(600, 262.5, 75, 75);
+
+  box8 = new Box(750, 487.5, 75, 75);
+  box9 = new Box(750, 412.5, 75, 75);
+  box10 = new Box(750, 337.5, 75, 75);
+  
+  box11 = new Box(900, 487.5, 75, 75);
+  box12 = new Box(900, 412.5, 75, 75);
+  box13 = new Box(900, 337.5, 75, 75);
+  box14 = new Box(900, 262.5, 75, 75);
+  box15 = new Box(900, 187.5, 75, 75);
 }
 
 function draw() {
@@ -36,10 +49,25 @@ function draw() {
   box1.display();
   box2.display();
   box3.display();
-  box4.display()
+  box4.display();
+  box5.display();
+  box6.display();
+  box7.display();
+  box8.display();
+  box9.display();
+  box10.display();
+  box11.display();
+  box12.display();
+  box13.display();
+  box14.display();
+  box15.display();
 
   hero.display();
   rope.display();
   monster.display();
 
+}
+
+function mouseDragged(){
+  Matter.Body.setPosition(hero.body,{x:mouseX,y:mouseY});
 }
